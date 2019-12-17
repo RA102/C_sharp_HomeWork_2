@@ -1,0 +1,20 @@
+﻿@model List<Country>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Html.ActionLink("Create new country", "Create")
+
+<h2>Index</h2>
+
+<table class="table table-striped">
+    @foreach (var item in Model) {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.CountryName</td>
+        </tr>
+    }
+
+</table>
+
+

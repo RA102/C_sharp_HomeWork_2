@@ -1,0 +1,20 @@
+﻿@model List<Author>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Create new author", "Create")
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    @foreach(var item in Model) {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.Surname</td>
+        <td>@item.Country.CountryName</td>
+    </tr>
+    }
+
+</table>
