@@ -26,7 +26,7 @@ namespace WebApplication2.Controllers
         {
             using(Model1 db = new Model1()) 
             {
-
+                ViewBag.CountryList = new SelectList(db.Countries.ToList(), "Id", "CountryName");
                 return View();
             }
 

@@ -48,5 +48,10 @@ namespace WebApplication2.Controllers
 
             return Redirect("index");
         }
+
+        public ActionResult Delete()
+        {
+            return View("index");
+        }
     }
 }
