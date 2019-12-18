@@ -48,5 +48,40 @@ namespace WebApplication2.Controllers
                 return Redirect("index");
             }
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            using(Model1 db = new Model1()) 
+            {
+                var author = db.Authors.Where(a => a.Id == id).FirstOrDefault();
+                ViewBag.CountryList = new SelectList(db.Countries.ToList(), "Id", "CounryName");
+                return View(author);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Author author)
+        {
+            using(Model1 db = new Model1()) 
+            {
+                db.Entry(author).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            using(Model1 db = new Model1()) 
+            {
+                Author author = db.Authors.Find(id);
+                db.Authors.Remove(author);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

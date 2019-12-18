@@ -49,9 +49,38 @@ namespace WebApplication2.Controllers
             return Redirect("index");
         }
 
-        public ActionResult Delete()
+        [HttpGet]
+        public ActionResult Edit(int? id)
         {
-            return View("index");
+            using (Model1 db = new Model1()) 
+            {
+                Book book = db.Books.Find(id);
+                ViewBag.AuthorList = new SelectList(db.Authors.ToList(), "Id", "SurName");
+
+                return View(book);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Book book)
+        {
+            using(Model1 db = new Model1()) 
+            {
+                db.Entry(book).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            using(Model1 db = new Model1()) 
+            {
+                Book book = db.Books.Find(id);
+                db.Books.Remove(book);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
     }
 }
