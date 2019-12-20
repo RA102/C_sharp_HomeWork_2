@@ -188,3 +188,4 @@ D:\STEP\C# ASP.net - AJAX\2\homeWork\WebApplication2\WebApplication2\obj\Debug\W
 D:\STEP\C# ASP.net - AJAX\2\homeWork\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csproj.CopyComplete
 D:\STEP\C# ASP.net - AJAX\2\homeWork\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 D:\STEP\C# ASP.net - AJAX\2\homeWork\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+D:\STEP\C# ASP.net - AJAX\2\homeWork\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojAssemblyReference.cache
